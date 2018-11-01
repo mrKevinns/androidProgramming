@@ -30,7 +30,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/toHttp"
+        android:id="@+id/toHttp_bnt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="HTTP" />
