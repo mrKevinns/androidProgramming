@@ -67,6 +67,7 @@ public class SecondActivity extends Activity implements Callback {              
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Item item = adapter.getItem(position);
                 Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(item.getLink()));
+                intent.putExtra("url", item.getLink());
                 startActivity(intent);
             }
         });

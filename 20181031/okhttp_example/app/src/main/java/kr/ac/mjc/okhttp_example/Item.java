@@ -3,6 +3,8 @@ package kr.ac.mjc.okhttp_example;
 public class Item {
     private String title, link, description;
 
+    private Enclosure enclosure;
+
     public String getTitle() {
         return title;
     }
@@ -26,4 +28,8 @@ public class Item {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Enclosure getEnclosure() { return enclosure; }
+
+    public void setEnclosure(Enclosure enclosure) { this.enclosure = enclosure; }
 }

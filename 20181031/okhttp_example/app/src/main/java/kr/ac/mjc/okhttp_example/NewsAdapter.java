@@ -41,9 +41,9 @@ public class NewsAdapter extends BaseAdapter {
         else {
             newsItemLayout = (NewsItemLayout) convertView;
         }
+
         Item item = getItem(position);
-        newsItemLayout.setTitle(item.getTitle());
-        newsItemLayout.setDescription(item.getDescription());
+        newsItemLayout.setItem(item);
 
         return newsItemLayout;
     }
