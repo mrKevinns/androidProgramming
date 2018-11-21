@@ -25,20 +25,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(R.string.app_name);
 
-        Button alarmBtn=findViewById(R.id.alarm_btn);
-        Button configClearBtn=findViewById(R.id.config_clear_btn);
+        Button alarmBtn = findViewById(R.id.alarm_btn);
+        Button configClearBtn = findViewById(R.id.config_clear_btn);
         alarmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences pref= PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
-                boolean messageAlarm=pref.getBoolean("message_alarm",false);
-                boolean alarm=pref.getBoolean("alarm",false);
-                String alarmSound=pref.getString("alarm_sound","오바마카카오톡");
-                if(messageAlarm&&alarm){
-                    String fileName="";
+                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                boolean messageAlarm = pref.getBoolean("message_alarm",false);
+                boolean sound = pref.getBoolean("alarm",false);
+                String alarmSound = pref.getString("alarm_sound","오바마카카오톡");
+                if(messageAlarm && sound){
+                    String fileName = "";
                     MediaPlayer mp = null;
                     switch (alarmSound){
                         case "오바마카카오톡":
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         configClearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences pref= PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
                 SharedPreferences.Editor editor=pref.edit();
                 editor.clear().commit();
 
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==R.id.setting){
+        if(item.getItemId() == R.id.setting){
             Intent intent=new Intent(MainActivity.this,SettingActivity.class);
             startActivity(intent);
         }
