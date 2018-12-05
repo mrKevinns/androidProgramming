@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button StudentAddButton = findViewById(R.id.std_add_btn);
-        ListView listView = findViewById(R.id.listView);
+        addStudentBtn = findViewById(R.id.std_add_btn);
+        listView = findViewById(R.id.listView);
 
         Realm.init(this);
         Realm realm = Realm.getDefaultInstance();
